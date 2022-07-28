@@ -1,5 +1,5 @@
 export const routesPaths = {
   HOME: '/',
-  FILMS: '/films',
+  EPISODES: '/episodes',
   CHARACTERS: '/characters',
 };
