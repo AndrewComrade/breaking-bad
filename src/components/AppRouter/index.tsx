@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { routesPaths } from '../../routes';
-import HomePage from '../../pages/HomePage/HomePage';
+import HomePage from '../../pages/HomePage';
 import CharactersPage from '../../pages/CharactersPage/CharactersPage';
 
 const AppRouter = () => {
