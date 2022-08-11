@@ -6,14 +6,14 @@ import Container from '@layout/components/Container';
 
 const Header = () => {
   return (
-    <div className={styles.Header}>
+    <header className={styles.Header}>
       <Container>
         <div className={styles.HeaderWrapper}>
           <Logo />
           <Navigation />
         </div>
       </Container>
-    </div>
+    </header>
   );
 };
 

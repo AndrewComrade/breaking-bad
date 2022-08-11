@@ -1,4 +1,4 @@
-import { ICharacter } from '../../types/ICharacter';
+import { ICharacter } from '@/types/ICharacter';
 import { createSlice } from '@reduxjs/toolkit';
 
 interface CharactersState {

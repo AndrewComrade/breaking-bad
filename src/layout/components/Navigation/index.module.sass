@@ -1,3 +1,5 @@
+@import "src/styles/variables"
+
 .Navigation
   display: flex
   justify-content: space-between
@@ -5,6 +7,13 @@
 .NavigationLink
   display: block
   padding: .5rem
-  border: 1px solid red
+  border-radius: 6px
+  background-color: $white-color
   text-decoration: none
-  color: darkgreen
+  font-size: 16px
+  font-weight: $font-bold-weight
+  color: $gray-color
+
+.NavigationLinkActive
+  background-color: $gray-color
+  color: $white-color
