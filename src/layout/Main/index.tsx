@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '@layout/components/Header';
+import Footer from '@layout/components/Footer';
 
 import styles from './index.module.sass';
 

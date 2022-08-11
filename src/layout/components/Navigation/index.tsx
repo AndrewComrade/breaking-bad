@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { routesPaths } from '../../../routes';
+import { routesPaths } from '@routes/index';
 import { Link } from 'react-router-dom';
 import styles from './index.module.sass';
 

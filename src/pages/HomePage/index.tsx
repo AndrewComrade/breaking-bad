@@ -1,7 +1,7 @@
+import Container from '@layout/components/Container';
 import React from 'react';
 
 import styles from './index.module.sass';
-import Container from '../../layout/components/Container';
 
 const HomePage = () => {
   return (

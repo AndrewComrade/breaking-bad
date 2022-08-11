@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { breakingBadAPI } from '../services/BreakingBadService';
+import { breakingBadAPI } from '@services/BreakingBadService';
 
 const rootReducer = combineReducers({
   [breakingBadAPI.reducerPath]: breakingBadAPI.reducer,

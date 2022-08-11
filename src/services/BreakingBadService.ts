@@ -1,5 +1,5 @@
+import { API_URL } from '@constants/index';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react';
-import { API_URL } from '../constants';
 
 export const breakingBadAPI = createApi({
   reducerPath: 'breakingBadAPI',

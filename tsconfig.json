@@ -12,10 +12,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
   },
   "include": ["src", "custom.d.ts"],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "extends": "./tsconfig.paths.json"
 }

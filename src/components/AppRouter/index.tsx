@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { routesPaths } from '../../routes';
-import HomePage from '../../pages/HomePage';
-import CharactersPage from '../../pages/CharactersPage/CharactersPage';
+import { routesPaths } from '@routes/index';
+import HomePage from '@pages/HomePage';
+import CharactersPage from '@pages/CharactersPage';
 
 const AppRouter = () => {
   return (

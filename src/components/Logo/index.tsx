@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import styles from './index.module.sass';
-import logo from '../../assets/icons/logo.svg';
+import logo from '@assets/icons/logo.svg';
 import { Link } from 'react-router-dom';
-import { routesPaths } from '../../routes';
+import { routesPaths } from '@routes/index';
 
 const Logo: FC = () => {
   return (
