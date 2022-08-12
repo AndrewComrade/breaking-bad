@@ -11,7 +11,9 @@ const CharactersPage: FC = () => {
     isLoading,
     data: characters,
     isError,
-  } = breakingBadAPI.useGetAllCharactersQuery('');
+  } = breakingBadAPI.useGetAllCharactersQuery({ limit: 10, offset: 10 });
+
+  console.log(characters);
 
   if (isLoading) {
     return <h1>LOADING</h1>;
@@ -28,7 +30,7 @@ const CharactersPage: FC = () => {
         <div className={styles.CharactersList}>
           {characters &&
             characters.map((character: ICharacter) => (
-              <CharacterCard key={character.id} character={character} />
+              <CharacterCard key={character.char_id} character={character} />
             ))}
         </div>
       </Container>
