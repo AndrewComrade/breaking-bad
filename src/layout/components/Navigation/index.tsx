@@ -24,8 +24,7 @@ const Navigation: FC = () => {
     <nav className={styles.Navigation}>
       {navigationLinks.map((link) => (
         <Link
-          className={cx({
-            NavigationLink: true,
+          className={cx(styles.NavigationLink, {
             NavigationLinkActive: location.pathname === link.path,
           })}
           key={link.label}

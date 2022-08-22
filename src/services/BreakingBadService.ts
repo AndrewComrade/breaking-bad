@@ -20,10 +20,10 @@ export const breakingBadAPI = createApi({
     getAllEpisodes: build.query({
       query: () => ({ url: '/episodes' }),
     }),
-    getCharacterById: build.query({
+    getSingleCharacter: build.query<ICharacter, number>({
       query: (id) => ({ url: `/characters/${id}` }),
     }),
-    getEpisodeById: build.query({
+    getSingleEpisode: build.query({
       query: (id) => ({ url: `/episodes/${id}` }),
     }),
   }),

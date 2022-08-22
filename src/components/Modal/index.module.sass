@@ -1,0 +1,28 @@
+@import "src/styles/variables"
+
+.Modal
+  display: none
+
+.ModalOpen
+  z-index: 100
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  display: block
+  background-color: rgba(0, 0, 0, .4)
+
+.ModalBody
+  z-index: 200
+  position: absolute
+  left: 50%
+  top: 50%
+  width: 200px
+  height: 200px
+  background-color: #fff
+  color: $blue-color
+  transform: translate(-50%, -50%)
+
+.ModalCloseBtn
+
