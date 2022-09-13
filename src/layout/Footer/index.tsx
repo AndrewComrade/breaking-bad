@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './index.module.sass';
-import Container from '@layout/components/Container';
+import Container from '@layout/Container';
 
 const Footer = () => {
   return (

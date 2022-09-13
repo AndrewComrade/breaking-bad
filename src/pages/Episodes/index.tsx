@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
+
+import styles from './index.module.sass';
+
 import { breakingBadAPI } from '@services/BreakingBadService';
 import { SeriesEnum } from '@/types/services';
-import Container from '@layout/components/Container';
-import EpisodesList from '@pages/Episodes/components/EpisodesList';
+import Container from '@layout/Container';
+import classNames from 'classnames/bind';
+import EpisodeCard from '@pages/Episodes/components/EpisodeCard';
 
-const seasons = Array.from(Array(5).keys());
+const seasons = [1, 2, 3, 4, 5];
+const cx = classNames.bind(styles);
 
 const EpisodesPage = () => {
   const {
@@ -13,7 +18,7 @@ const EpisodesPage = () => {
     isError,
   } = breakingBadAPI.useGetEpisodesBySeriesQuery(SeriesEnum.breakingBad);
 
-  const [selectedSeason, setSelectedSeason] = useState<number | null>(null);
+  const [selectedSeason, setSelectedSeason] = useState<number>(seasons[0]);
 
   if (isLoading) {
     return <h1>LOADING</h1>;
@@ -26,16 +31,30 @@ const EpisodesPage = () => {
   return (
     <div>
       <Container>
-        <div>
-          {seasons &&
-            seasons.map((season) => (
-              <div key={season} onClick={() => setSelectedSeason(season)}>
-                Season {++season}
-              </div>
-            ))}
+        <div className={styles.SeasonsWrapper}>
+          <div className={styles.SeasonsList}>
+            {seasons &&
+              seasons.map((season, index, arr) => (
+                <button
+                  key={season}
+                  className={cx(styles.SeasonsItem, {
+                    SeasonsItemActive: selectedSeason === arr[index],
+                  })}
+                  onClick={() => setSelectedSeason(season)}
+                >
+                  Season {season}
+                </button>
+              ))}
+          </div>
         </div>
         {episodes && selectedSeason && (
-          <EpisodesList episodes={episodes} selectedSeason={selectedSeason} />
+          <div className={styles.EpisodesList}>
+            {episodes
+              .filter((episode) => +episode.season === selectedSeason)
+              .map((episode) => (
+                <EpisodeCard key={episode.episode_id} episodeItem={episode} />
+              ))}
+          </div>
         )}
       </Container>
     </div>

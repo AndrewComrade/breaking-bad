@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './index.module.sass';
-import Navigation from '@layout/components/Navigation';
+import Navigation from '@layout/Navigation';
 import Logo from '@components/Logo';
-import Container from '@layout/components/Container';
+import Container from '@layout/Container';
 
 const Header = () => {
   return (

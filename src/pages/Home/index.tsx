@@ -1,4 +1,4 @@
-import Container from '@layout/components/Container';
+import Container from '@layout/Container';
 import React from 'react';
 
 import styles from './index.module.sass';

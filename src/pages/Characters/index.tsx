@@ -4,7 +4,7 @@ import styles from './index.module.sass';
 import { breakingBadAPI } from '@services/BreakingBadService';
 import { ICharacter } from '@/types/ICharacter';
 import useToggle from '@hooks/useToggle';
-import Container from '@layout/components/Container';
+import Container from '@layout/Container';
 import CharacterCard from '@pages/Characters/components/CharacterCard';
 import CharacterModal from '@pages/Characters/components/CharacterModal';
 import { BASE_PAGINATION_PARAMS } from '@constants/index';
