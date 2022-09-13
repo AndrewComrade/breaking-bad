@@ -2,6 +2,7 @@ import React, { FC, useState } from 'react';
 import { breakingBadAPI } from '@services/BreakingBadService';
 import { SeriesEnum } from '@/types/services';
 import Container from '@layout/components/Container';
+import EpisodesList from '@pages/Episodes/components/EpisodesList';
 
 const seasons = Array.from(Array(5).keys());
 
@@ -25,9 +26,7 @@ const EpisodesPage: FC = () => {
   return (
     <div>
       <Container>
-        <div>{selectedSeason}</div>
         <div>
-          <span>Seasons:</span>
           {seasons &&
             seasons.map((season) => (
               <div key={season} onClick={() => setSelectedSeason(season)}>
@@ -35,15 +34,9 @@ const EpisodesPage: FC = () => {
               </div>
             ))}
         </div>
-        <div>
-          {episodes &&
-            selectedSeason &&
-            episodes
-              .filter((episode) => +episode.season === selectedSeason)
-              .map((episode) => (
-                <div key={episode.episode_id}>{episode.episode}</div>
-              ))}
-        </div>
+        {episodes && selectedSeason && (
+          <EpisodesList episodes={episodes} selectedSeason={selectedSeason} />
+        )}
       </Container>
     </div>
   );
