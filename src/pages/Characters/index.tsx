@@ -1,19 +1,20 @@
 import React, { FC, useState } from 'react';
 
 import styles from './index.module.sass';
-import Container from '@layout/components/Container';
 import { breakingBadAPI } from '@services/BreakingBadService';
 import { ICharacter } from '@/types/ICharacter';
-import CharacterCard from '@pages/Characters/components/CharacterCard';
-import Modal from '@components/Modal';
 import useToggle from '@hooks/useToggle';
+import Container from '@layout/components/Container';
+import CharacterCard from '@pages/Characters/components/CharacterCard';
+import CharacterModal from '@pages/Characters/components/CharacterModal';
+import { BASE_PAGINATION_PARAMS } from '@constants/index';
 
 const CharactersPage: FC = () => {
   const {
     isLoading,
     data: characters,
     isError,
-  } = breakingBadAPI.useGetAllCharactersQuery({ limit: 10, offset: 10 });
+  } = breakingBadAPI.useGetAllCharactersQuery(BASE_PAGINATION_PARAMS);
 
   const [selectedCharacter, setSelectedCharacter] = useState<ICharacter>();
 
@@ -40,7 +41,7 @@ const CharactersPage: FC = () => {
         <div>Characters Page header</div>
         <div className={styles.CharactersList}>
           {characters &&
-            characters.map((character: ICharacter) => (
+            characters.map((character) => (
               <CharacterCard
                 key={character.char_id}
                 character={character}
@@ -49,9 +50,11 @@ const CharactersPage: FC = () => {
             ))}
         </div>
       </Container>
-      <Modal isModalOpen={isCharacterModal} setModalOpen={setCharacterModal}>
-        {selectedCharacter && <div>ID: {selectedCharacter.char_id}</div>}
-      </Modal>
+      <CharacterModal
+        isModalOpen={isCharacterModal}
+        setModalOpen={setCharacterModal}
+        character={selectedCharacter || ({} as ICharacter)}
+      />
     </div>
   );
 };
