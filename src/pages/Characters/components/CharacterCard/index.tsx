@@ -2,8 +2,7 @@ import React, { FC } from 'react';
 import styles from './index.module.sass';
 
 import { ICharacter } from '@/types/ICharacter';
-
-import CharacterCardInfo from '@pages/Characters/components/CharacterCardInfo';
+import CardInfo from '@pages/Characters/components/CharacterCard/CardInfo';
 
 interface CharacterCardProps {
   character: ICharacter;
@@ -14,20 +13,17 @@ const CharacterCard: FC<CharacterCardProps> = ({ character, onShowMore }) => {
   const { name, img, nickname, char_id } = character;
 
   return (
-    <article className={styles.CharacterCard}>
-      <div className={styles.CharacterCardSidebar}>
-        <img className={styles.CharacterCardImage} src={img} alt={name} />
-        <button
-          className={styles.CharacterCardMoreBtn}
-          onClick={() => onShowMore(char_id)}
-        >
+    <article className={styles.Card}>
+      <div className={styles.Sidebar}>
+        <img className={styles.Image} src={img} alt={name} />
+        <button className={styles.MoreBtn} onClick={() => onShowMore(char_id)}>
           More details
         </button>
       </div>
-      <div className={styles.CharacterCardMain}>
-        <h3 className={styles.CharacterCardName}>{name}</h3>
-        <span className={styles.CharacterCardNickname}>{nickname}</span>
-        <CharacterCardInfo character={character} />
+      <div className={styles.Main}>
+        <h3 className={styles.Name}>{name}</h3>
+        <span className={styles.Nickname}>{nickname}</span>
+        <CardInfo character={character} />
       </div>
     </article>
   );

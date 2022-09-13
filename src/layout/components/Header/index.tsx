@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header className={styles.Header}>
       <Container>
-        <div className={styles.HeaderWrapper}>
+        <div className={styles.Wrapper}>
           <Logo />
           <Navigation />
         </div>

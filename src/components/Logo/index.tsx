@@ -7,7 +7,7 @@ import { routesPaths } from '@routes/index';
 const Logo: FC = () => {
   return (
     <Link to={routesPaths.HOME}>
-      <div className={styles.LogoWrapper}>
+      <div className={styles.Wrapper}>
         <img className={styles.LogoImage} src={logo} alt='Breaking bad logo' />
       </div>
     </Link>

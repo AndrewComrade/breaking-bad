@@ -36,7 +36,7 @@ const CharactersPage: FC = () => {
   }
 
   return (
-    <div className={styles.CharacterPage}>
+    <div className={styles.CharactersPage}>
       <Container>
         <div>Characters Page header</div>
         <div className={styles.CharactersList}>

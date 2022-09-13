@@ -10,7 +10,7 @@ interface MainProps {
 
 const Main: FC<MainProps> = ({ children }) => {
   return (
-    <div className={styles.MainGrid}>
+    <div className={styles.Grid}>
       <Header />
       <main className={styles.Main}>{children}</main>
       <Footer />

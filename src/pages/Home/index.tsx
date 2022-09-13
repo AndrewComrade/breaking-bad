@@ -5,7 +5,7 @@ import styles from './index.module.sass';
 
 const HomePage = () => {
   return (
-    <div className={styles.HomePage}>
+    <div className={styles.Home}>
       <Container>
         <h1>SAY MY NAME!</h1>
       </Container>

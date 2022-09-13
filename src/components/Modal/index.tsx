@@ -29,7 +29,7 @@ const Modal: FC<ModalProps> = ({ children, isModalOpen, setModalOpen }) => {
     >
       <div className={styles.ModalBody} onClick={onModalBodyClick}>
         {children}
-        <button className={styles.ModalCloseBtn} onClick={onModalClose}>
+        <button className={styles.CloseBtn} onClick={onModalClose}>
           Close
         </button>
       </div>
