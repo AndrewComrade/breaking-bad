@@ -8,7 +8,7 @@ interface MainProps {
   children: React.ReactNode;
 }
 
-const Main: FC<MainProps> = ({ children }) => {
+const Main = ({ children }: MainProps) => {
   return (
     <div className={styles.Grid}>
       <Header />

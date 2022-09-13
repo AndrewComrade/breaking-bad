@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import classNames from 'classnames/bind';
 import styles from './index.module.sass';
 
@@ -10,7 +10,7 @@ interface ModalProps {
 
 const cx = classNames.bind(styles);
 
-const Modal: FC<ModalProps> = ({ children, isModalOpen, setModalOpen }) => {
+const Modal = ({ children, isModalOpen, setModalOpen }: ModalProps) => {
   const onModalClose = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();
     setModalOpen(false);

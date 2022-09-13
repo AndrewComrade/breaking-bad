@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { IEpisode } from '@/types/IEpisode';
 
 interface EpisodesListProps {
@@ -6,7 +6,7 @@ interface EpisodesListProps {
   selectedSeason: number;
 }
 
-const EpisodesList: FC<EpisodesListProps> = ({ episodes, selectedSeason }) => {
+const EpisodesList = ({ episodes, selectedSeason }: EpisodesListProps) => {
   return (
     <div>
       {episodes

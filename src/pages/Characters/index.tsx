@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { useState } from 'react';
 
 import styles from './index.module.sass';
 import { breakingBadAPI } from '@services/BreakingBadService';
@@ -9,7 +9,7 @@ import CharacterCard from '@pages/Characters/components/CharacterCard';
 import CharacterModal from '@pages/Characters/components/CharacterModal';
 import { BASE_PAGINATION_PARAMS } from '@constants/index';
 
-const CharactersPage: FC = () => {
+const CharactersPage = () => {
   const {
     isLoading,
     data: characters,

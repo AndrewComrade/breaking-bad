@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { routesPaths } from '@routes/index';
 import { Link, useLocation } from 'react-router-dom';
 import classNames from 'classnames/bind';
@@ -17,7 +17,7 @@ const navigationLinks = [
 
 const cx = classNames.bind(styles);
 
-const Navigation: FC = () => {
+const Navigation = () => {
   const location = useLocation();
 
   return (

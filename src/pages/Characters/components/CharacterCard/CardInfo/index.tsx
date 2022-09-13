@@ -1,13 +1,13 @@
-import React, { FC } from 'react';
+import React from 'react';
 import styles from './index.module.sass';
 
 import { ICharacter } from '@/types/ICharacter';
 
-interface CharacterCardInfoProps {
+interface CardInfoProps {
   character: ICharacter;
 }
 
-const CardInfo: FC<CharacterCardInfoProps> = ({ character }) => {
+const CardInfo = ({ character }: CardInfoProps) => {
   const { birthday, status, occupation, portrayed } = character;
 
   return (

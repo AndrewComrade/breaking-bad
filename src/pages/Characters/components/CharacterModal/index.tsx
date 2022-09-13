@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import Modal from '@components/Modal';
 import { ICharacter } from '@/types/ICharacter';
 
@@ -8,11 +8,11 @@ interface CharacterModalProps {
   character: ICharacter;
 }
 
-const CharacterModal: FC<CharacterModalProps> = ({
+const CharacterModal = ({
   isModalOpen,
   setModalOpen,
   character,
-}) => {
+}: CharacterModalProps) => {
   return (
     <Modal isModalOpen={isModalOpen} setModalOpen={setModalOpen}>
       <div>{character.char_id}</div>

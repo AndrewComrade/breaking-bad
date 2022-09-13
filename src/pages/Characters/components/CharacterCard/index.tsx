@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import styles from './index.module.sass';
 
 import { ICharacter } from '@/types/ICharacter';
@@ -9,7 +9,7 @@ interface CharacterCardProps {
   onShowMore: (char_id: number) => void;
 }
 
-const CharacterCard: FC<CharacterCardProps> = ({ character, onShowMore }) => {
+const CharacterCard = ({ character, onShowMore }: CharacterCardProps) => {
   const { name, img, nickname, char_id } = character;
 
   return (

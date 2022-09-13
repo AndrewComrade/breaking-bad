@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { useState } from 'react';
 import { breakingBadAPI } from '@services/BreakingBadService';
 import { SeriesEnum } from '@/types/services';
 import Container from '@layout/components/Container';
@@ -6,7 +6,7 @@ import EpisodesList from '@pages/Episodes/components/EpisodesList';
 
 const seasons = Array.from(Array(5).keys());
 
-const EpisodesPage: FC = () => {
+const EpisodesPage = () => {
   const {
     isLoading,
     data: episodes,

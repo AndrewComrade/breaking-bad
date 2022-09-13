@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 import styles from './index.module.sass';
 import Container from '@layout/components/Container';
 
-const Footer: FC = () => {
+const Footer = () => {
   return (
     <footer className={styles.Footer}>
       <Container>
