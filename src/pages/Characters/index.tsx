@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import styles from './index.module.sass';
 import { breakingBadAPI } from '@services/BreakingBadService';
@@ -7,18 +7,30 @@ import useToggle from '@hooks/useToggle';
 import Container from '@layout/Container';
 import CharacterCard from '@pages/Characters/components/CharacterCard';
 import CharacterModal from '@pages/Characters/components/CharacterModal';
-import { BASE_PAGINATION_PARAMS } from '@constants/index';
+import useInView from '@hooks/useInView';
+import useInfiniteLoading from '@hooks/useInfiniteLoading';
 
 const CharactersPage = () => {
   const {
+    combinedData: characters,
     isLoading,
-    data: characters,
+    isFetching,
     isError,
-  } = breakingBadAPI.useGetAllCharactersQuery(BASE_PAGINATION_PARAMS);
+    setPage,
+    hasMore,
+  } = useInfiniteLoading();
 
   const [selectedCharacter, setSelectedCharacter] = useState<ICharacter>();
-
   const { state: isCharacterModal, toggle: setCharacterModal } = useToggle();
+
+  const ref: any = useRef<HTMLElement>(null);
+  const isIntersecting = useInView(ref, '0px');
+
+  useEffect(() => {
+    if (isIntersecting && hasMore) {
+      setPage((prevPage) => prevPage + 1);
+    }
+  }, [isIntersecting]);
 
   const onShowMore = (id: number) => {
     setSelectedCharacter(
@@ -49,6 +61,8 @@ const CharactersPage = () => {
               />
             ))}
         </div>
+        {isFetching && <div>Loading more characters...</div>}
+        <div ref={ref}></div>
       </Container>
       <CharacterModal
         isModalOpen={isCharacterModal}

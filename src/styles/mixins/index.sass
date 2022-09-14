@@ -11,3 +11,27 @@
     font-weight: #{$weight}
     font-display: swap
     font-style: $style
+
+@mixin cross($size: 20px, $color: #000, $thickness: 1px)
+  position: relative
+  margin: 0
+  padding: 0
+  width: $size
+  height: $size
+  border: 0
+  background: none
+
+  &:before, &:after
+    content: ''
+    position: absolute
+    top: ($size - $thickness) / 2
+    left: 0
+    right: 0
+    height: $thickness
+    background: $color
+
+  &:before
+    transform: rotate(45deg)
+
+  &:after
+    transform: rotate(-45deg)

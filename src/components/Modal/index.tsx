@@ -29,9 +29,7 @@ const Modal = ({ children, isModalOpen, setModalOpen }: ModalProps) => {
     >
       <div className={styles.ModalBody} onClick={onModalBodyClick}>
         {children}
-        <button className={styles.CloseBtn} onClick={onModalClose}>
-          Close
-        </button>
+        <button className={styles.CloseBtn} onClick={onModalClose} />
       </div>
     </div>
   );

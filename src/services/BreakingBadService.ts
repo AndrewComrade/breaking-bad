@@ -2,16 +2,18 @@ import { API_URL } from '@constants/index';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react';
 import { ICharacter } from '@/types/ICharacter';
 import { IEpisode } from '@/types/IEpisode';
-import { IPaginationParams } from '@/types/services';
 
 export const breakingBadAPI = createApi({
   reducerPath: 'breakingBadAPI',
   baseQuery: fetchBaseQuery({ baseUrl: API_URL }),
   endpoints: (build) => ({
-    getAllCharacters: build.query<ICharacter[], IPaginationParams>({
-      query: (params) => ({
+    getAllCharacters: build.query<ICharacter[], number>({
+      query: (page) => ({
         url: '/characters',
-        params,
+        params: {
+          limit: 10,
+          offset: 10 * page,
+        },
       }),
     }),
     getEpisodesBySeries: build.query<IEpisode[], string>({
