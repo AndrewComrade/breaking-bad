@@ -21,7 +21,9 @@ const useInView = <T extends Element>(
     }
 
     return () => {
-      observer.unobserve(target.current);
+      if (target.current) {
+        observer.unobserve(target.current);
+      }
     };
   }, [target.current]);
 

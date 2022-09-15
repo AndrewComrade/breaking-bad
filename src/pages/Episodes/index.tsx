@@ -7,6 +7,7 @@ import { SeriesEnum } from '@/types/services';
 import Container from '@layout/Container';
 import classNames from 'classnames/bind';
 import EpisodeCard from '@pages/Episodes/components/EpisodeCard';
+import Loader from '@components/Loader';
 
 const seasons = [1, 2, 3, 4, 5];
 const cx = classNames.bind(styles);
@@ -21,7 +22,7 @@ const EpisodesPage = () => {
   const [selectedSeason, setSelectedSeason] = useState<number>(seasons[0]);
 
   if (isLoading) {
-    return <h1>LOADING</h1>;
+    return <Loader />;
   }
 
   if (isError) {
