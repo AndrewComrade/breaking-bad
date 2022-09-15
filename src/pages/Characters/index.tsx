@@ -10,6 +10,7 @@ import useInView from '@hooks/useInView';
 import useInfiniteLoading from '@hooks/useInfiniteLoading';
 import ScrollTopBtn from '@components/ScrollTopBtn';
 import Loader from '@components/Loader';
+import { breakingBadAPI } from '@services/BreakingBadService';
 
 const CharactersPage = () => {
   const {
@@ -19,7 +20,7 @@ const CharactersPage = () => {
     isError,
     setPage,
     hasMore,
-  } = useInfiniteLoading();
+  } = useInfiniteLoading(breakingBadAPI.useGetAllCharactersQuery);
 
   const [selectedCharacter, setSelectedCharacter] = useState<ICharacter>();
   const { state: isCharacterModal, toggle: setCharacterModal } = useToggle();

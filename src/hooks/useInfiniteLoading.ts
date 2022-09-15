@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react';
 import { ICharacter } from '@/types/ICharacter';
-import { breakingBadAPI } from '@services/BreakingBadService';
 
-const useInfiniteLoading = () => {
+const useInfiniteLoading = (query: any) => {
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(false);
   const [combinedData, setCombinedData] = useState<ICharacter[]>([]);
 
-  const { data, isLoading, isError, isFetching } =
-    breakingBadAPI.useGetAllCharactersQuery(page);
+  const { data, isLoading, isError, isFetching } = query(page);
 
   useEffect(() => {
     if (data && data.length > 0) {
