@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import classNames from 'classnames/bind';
 
 import styles from './index.module.sass';
 
 import { breakingBadAPI } from '@services/BreakingBadService';
 import { SeriesEnum } from '@/types/services';
+
 import Container from '@layout/Container';
-import classNames from 'classnames/bind';
 import EpisodeCard from '@pages/Episodes/components/EpisodeCard';
 import Loader from '@components/Loader';
 

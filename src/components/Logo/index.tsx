@@ -1,7 +1,9 @@
 import React from 'react';
-import styles from './index.module.sass';
-import logo from '@assets/icons/logo.svg';
 import { Link } from 'react-router-dom';
+
+import styles from './index.module.sass';
+
+import logo from '@assets/icons/logo.svg';
 import { routesPaths } from '@routes/index';
 
 const Logo = () => {

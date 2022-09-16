@@ -1,16 +1,21 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 import styles from './index.module.sass';
+
 import { ICharacter } from '@/types/ICharacter';
+
 import useToggle from '@hooks/useToggle';
+import useInView from '@hooks/useInView';
+import useInfiniteLoading from '@hooks/useInfiniteLoading';
+
+import { breakingBadAPI } from '@services/BreakingBadService';
+
 import Container from '@layout/Container';
 import CharacterCard from '@pages/Characters/components/CharacterCard';
 import CharacterModal from '@pages/Characters/components/CharacterModal';
-import useInView from '@hooks/useInView';
-import useInfiniteLoading from '@hooks/useInfiniteLoading';
 import ScrollTopBtn from '@components/ScrollTopBtn';
 import Loader from '@components/Loader';
-import { breakingBadAPI } from '@services/BreakingBadService';
+import Search from '@components/Search';
 
 const CharactersPage = () => {
   const {
@@ -52,7 +57,9 @@ const CharactersPage = () => {
   return (
     <div className={styles.CharactersPage}>
       <Container>
-        <div>Characters Page header</div>
+        <div className={styles.CharactersSearch}>
+          <Search placeholder='Search by character name' />
+        </div>
         <div className={styles.CharactersList}>
           {characters &&
             characters.map((character) => (

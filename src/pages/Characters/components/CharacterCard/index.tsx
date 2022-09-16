@@ -1,7 +1,9 @@
 import React from 'react';
+
 import styles from './index.module.sass';
 
 import { ICharacter } from '@/types/ICharacter';
+
 import CardInfo from '@pages/Characters/components/CharacterCard/CardInfo';
 
 interface CharacterCardProps {

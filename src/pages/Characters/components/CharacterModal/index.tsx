@@ -1,6 +1,8 @@
 import React from 'react';
-import Modal from '@components/Modal';
+
 import { ICharacter } from '@/types/ICharacter';
+
+import Modal from '@components/Modal';
 
 interface CharacterModalProps {
   isModalOpen: boolean;
