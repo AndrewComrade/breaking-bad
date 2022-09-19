@@ -16,6 +16,14 @@ export const breakingBadAPI = createApi({
         },
       }),
     }),
+    getCharactersByName: build.query<ICharacter[], string>({
+      query: (name) => ({
+        url: '/characters',
+        params: {
+          name,
+        },
+      }),
+    }),
     getEpisodesBySeries: build.query<IEpisode[], string>({
       query: (series) => ({
         url: '/episodes',

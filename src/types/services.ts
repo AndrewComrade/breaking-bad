@@ -4,6 +4,6 @@ export interface IPaginationParams {
 }
 
 export enum SeriesEnum {
-  breakingBad = 'Breaking Bad',
-  betterCallSaul = 'Better Call Saul',
+  BREAKING_BAD = 'Breaking Bad',
+  BETTER_CALL_SAUL = 'Better Call Saul',
 }

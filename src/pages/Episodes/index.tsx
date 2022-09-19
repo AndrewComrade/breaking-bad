@@ -18,7 +18,7 @@ const EpisodesPage = () => {
     isLoading,
     data: episodes,
     isError,
-  } = breakingBadAPI.useGetEpisodesBySeriesQuery(SeriesEnum.breakingBad);
+  } = breakingBadAPI.useGetEpisodesBySeriesQuery(SeriesEnum.BREAKING_BAD);
 
   const [selectedSeason, setSelectedSeason] = useState<number>(seasons[0]);
 
